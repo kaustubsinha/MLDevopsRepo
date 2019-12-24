@@ -31,10 +31,3 @@ steps:
     pytest
   displayName: 'pytest'
   
-# Python package
-- task: Docker@2
-  inputs:
-    containerRegistry: 'mlopsserviceconnection'
-    repository: 'predictaffairrepo'
-    command: 'buildAndPush'
-    Dockerfile: '**/dockerfile'
