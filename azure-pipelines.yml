@@ -30,4 +30,10 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
-  
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'mlopsserviceconnection'
+    repository: 'MLDevopsRepo'
+    command: 'buildAndPush'
+    Dockerfile: '**/dockerfile'
